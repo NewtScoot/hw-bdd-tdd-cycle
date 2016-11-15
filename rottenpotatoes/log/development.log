@@ -863,3 +863,270 @@ Started GET "/assets/jquery.self.js?body=1" for ::1 at 2015-07-28 12:40:07 -0700
 
 
 Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:40:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDirectorToMovies (20161115131723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "movies" ADD "director" varchar DEFAULT '' NOT NULL[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161115131723"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (13.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar DEFAULT '' NOT NULL) [0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (10.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161115131723')
+  [1m[36m (14.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+
+
+Started GET "/assets/rails.png" for 155.225.145.75 at 2016-11-15 15:12:27 +0000
+
+
+Started GET "/movies" for 155.225.145.75 at 2016-11-15 15:12:31 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (27.5ms)
+Completed 200 OK in 255ms (Views: 210.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:12:32 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:12:32 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:12:32 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:12:32 +0000
+
+
+Started GET "/movies/new" for 155.225.145.75 at 2016-11-15 15:12:37 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (12.8ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:12:37 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:12:37 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:12:37 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:12:37 +0000
+
+
+Started GET "/movies/new" for 155.225.145.75 at 2016-11-15 15:18:26 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:18:27 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:18:27 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:18:27 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:18:27 +0000
+
+
+Started POST "/movies" for 155.225.145.75 at 2016-11-15 15:20:46 +0000
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z6nXyI8kglU4ekrTjirplv0FiOf6WH0k87Q4a0XMEnSzANg/UQCvJvU93EPcZ2EYs+nFvgVh9zUdUkDZck4gmA==", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2016", "release_date(2i)"=>"11", "release_date(3i)"=>"15"}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["rating", "G"], ["release_date", "2016-11-15 00:00:00.000000"], ["created_at", "2016-11-15 15:20:46.284960"], ["updated_at", "2016-11-15 15:20:46.284960"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+Redirected to https://saasbook-nmccollum.c9users.io/movies
+Completed 302 Found in 26ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/movies" for 155.225.145.75 at 2016-11-15 15:20:46 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:20:46 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:20:46 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:20:46 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:20:46 +0000
+
+
+Started GET "/movies/new" for 155.225.145.75 at 2016-11-15 15:22:12 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:22:12 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:22:12 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:22:12 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:22:12 +0000
+
+
+Started GET "/movies/12" for 155.225.145.75 at 2016-11-15 15:22:46 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:22:47 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:22:47 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:22:47 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:22:47 +0000
+
+
+Started GET "/movies" for 155.225.145.75 at 2016-11-15 15:24:20 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:24:20 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:24:20 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:24:20 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:24:20 +0000
+
+
+Started GET "/movies/6" for 155.225.145.75 at 2016-11-15 15:25:16 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:25:17 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:17 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:17 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:17 +0000
+
+
+Started DELETE "/movies/6" for 155.225.145.75 at 2016-11-15 15:25:19 +0000
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nlcokqLz9HLYkLhTyx6uvQ8EdQBMoUlQdIs9GU4vdbJK/idlfNfZARXXLsOZUyYzQeg4WbOYw0GabUWrea1HXg==", "id"=>"6"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 6]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Redirected to https://saasbook-nmccollum.c9users.io/movies
+Completed 302 Found in 14ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/movies" for 155.225.145.75 at 2016-11-15 15:25:19 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (63.0ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:25:20 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:20 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:20 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:20 +0000
+
+
+Started GET "/movies/12" for 155.225.145.75 at 2016-11-15 15:25:30 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:31 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:31 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 155.225.145.75 at 2016-11-15 15:25:31 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 155.225.145.75 at 2016-11-15 15:25:31 +0000
+
+
+Started GET "/hw-bdd-tdd-cycle/rottenpotatoes/coverage/index.html" for 155.225.145.75 at 2016-11-15 15:26:09 +0000
+
+ActionController::RoutingError (No route matches [GET] "/hw-bdd-tdd-cycle/rottenpotatoes/coverage/index.html"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.9ms)
